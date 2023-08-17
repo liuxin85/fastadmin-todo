@@ -1,0 +1,51 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshiint')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ceshiint" class="form-control" name="row[ceshiint]" type="number" value="{$row.ceshiint|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshinum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-ceshinum" class="form-control selectpicker" name="row[ceshinum]">
+                {foreach name="ceshinumList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.ceshinum"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshifloat')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ceshifloat" class="form-control" step="0.01" name="row[ceshifloat]" type="number" value="{$row.ceshifloat|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshidate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ceshidate" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[ceshidate]" type="text" value="{$row.ceshidate}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshitimestamp')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ceshitimestamp" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[ceshitimestamp]" type="text" value="{:$row.ceshitimestamp?datetime($row.ceshitimestamp):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ceshitext')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-ceshitext" class="form-control " rows="5" name="row[ceshitext]" cols="50">{$row.ceshitext|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
